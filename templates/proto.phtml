@@ -1,0 +1,32 @@
+<?php $this->headTitle('Prototype index'); ?>
+
+<div class="jumbotron">
+    <h1>Welcome to <span class="zf-green">t4web/prototype</span></h1>
+    <p>
+        It's simply prototyping tool.
+    </p>
+    <p><small>
+        Just add Prototype module to your app like <a href="https://zendframework.github.io/zend-expressive/cookbook/modular-layout/" target="_blank">this</a>.
+        Then, make sure you create a template for the page. In the above example,
+        I'd likely create the file in <code>templates/app/prototype/about.phtml</code>.
+    </small></p>
+    <p><small>
+        After this you may go to page <code>http://your.host/proto?t=about</code> or
+    </small></p>
+    <p>
+        <ul>
+            <li>
+                <code>http://your.host/proto?t=about/first</code> - and will be shown template
+                <code>templates/app/prototype/about/first.phtml</code>
+            </li>
+            <li>
+                <code>http://your.host/proto?t=about/second</code> - and will be shown template
+                <code>templates/app/prototype/about/second.phtml</code><br>
+            </li>
+            <li>
+                <code>http://your.host/proto?t=about/second&l=layout/empty</code> - and will be shown template
+                <code>templates/app/prototype/about/second.phtml</code> and layout <code>templates/layout/empty.phtml</code>
+            </li>
+        </ul>
+    </p>
+</div>
