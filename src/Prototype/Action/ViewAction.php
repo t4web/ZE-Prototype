@@ -19,6 +19,15 @@ class ViewAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        return new HtmlResponse($this->template->render('proto::proto'));
+        if (!isset($request->getQueryParams()['t'])) {
+            return $next($request, $response->withStatus(400), 'Invalid parameter "t" - template name');
+        }
+
+        $data = [];
+        if (isset($request->getQueryParams()['l'])) {
+            $data['layout'] = 'proto-layout::' . $request->getQueryParams()['l'];
+        }
+
+        return new HtmlResponse($this->template->render('proto::' . $request->getQueryParams()['t'], $data));
     }
 }
