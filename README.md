@@ -27,4 +27,4 @@ You may override config for your application. In `config/autoload/templates.glob
 ],
 ```
 
-And create folder `proto` in `templates/app/`
+And create folder `proto` in `templates/app/`.
