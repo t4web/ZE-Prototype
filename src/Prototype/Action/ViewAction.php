@@ -5,7 +5,6 @@ namespace T4web\Prototype\Action;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router;
 use Zend\Expressive\Template;
 
 class ViewAction
