@@ -1,6 +1,6 @@
 <?php
 
-namespace Prototype\Action;
+namespace T4web\Prototype\Action;
 
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;

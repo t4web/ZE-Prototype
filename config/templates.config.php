@@ -2,6 +2,6 @@
 
 return [
     'paths' => [
-        'proto' => ['vendor/t4web/prototype/templates'],
+        'proto' => ['vendor/t4web/ze-prototype/templates'],
     ],
 ];

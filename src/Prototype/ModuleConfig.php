@@ -1,6 +1,6 @@
 <?php
 
-namespace Prototype;
+namespace T4web\Prototype;
 
 class ModuleConfig
 {

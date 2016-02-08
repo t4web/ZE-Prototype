@@ -5,6 +5,7 @@
   "license": "BSD-3-Clause",
   "keywords": [
     "zend-expressive",
+    "zend-expressive middleware",
     "prototype"
   ],
   "homepage": "https://github.com/t4web/ZE-Prototype",
@@ -20,6 +21,8 @@
     
   },
   "autoload": {
-
+    "psr-4": {
+      "T4web\\Prototype\\": "src/Prototype/"
+    }
   }
 }

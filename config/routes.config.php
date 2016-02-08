@@ -1,6 +1,6 @@
 <?php
 
-use Prototype\Action;
+use T4web\Prototype\Action;
 
 return [
     [
