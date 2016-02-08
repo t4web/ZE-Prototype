@@ -1,44 +1,25 @@
 {
-  "name": "t4web/admin",
-  "description": "ZF2 Admin module",
+  "name": "t4web/ze-prototype",
+  "description": "Zend-Expressive middleware. Prototyping tool - for fast and simple create static html pages",
   "type": "library",
   "license": "BSD-3-Clause",
   "keywords": [
-    "zf2",
-    "admin"
+    "zend-expressive",
+    "prototype"
   ],
-  "homepage": "https://github.com/t4web/Admin",
+  "homepage": "https://github.com/t4web/ZE-Prototype",
   "authors": [
     {
-      "name": "Sebaks"
+      "name": "maxgu"
     }
   ],
   "require": {
-    "php": ">=5.5",
-
-    "zendframework/zend-console": "~2.5.0",
-    "zendframework/zend-eventmanager": "~2.5.0",
-    "zendframework/zend-modulemanager": "~2.5.0",
-    "zendframework/zend-mvc": "~2.5.0",
-    "zendframework/zend-paginator": "~2.5.0",
-    "zendframework/zend-view": "~2.5.0",
-
-    "sebaks/crud": "1.0.*",
-
-    "t4web/infrastructure": "~1.0.0",
-    "t4web/domain-module": "1.0.0",
-    "t4web/filter": "1.0.0"
+    "php": ">=5.5"
   },
   "require-dev" : {
-    "phpunit/phpunit": "4.5.*"
+    
   },
   "autoload": {
-    "psr-0": {
-      "T4webAdmin": "src/",
-      "T4webAdminTest": "tests/"
-    },
-    "classmap": [
-      "./Module.php"
-    ]
+
   }
 }
