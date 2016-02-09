@@ -49,13 +49,13 @@ class ViewAction
         }
 
         if (isset($request->getQueryParams()['l'])) {
-            $layoutName = 'proto-layout::' . $request->getQueryParams()['l'];
+            $layoutName = $request->getQueryParams()['l'];
         }
 
         return new HtmlResponse(
             $this->template->render(
                 'proto::' . $templateName,
-                ['layout' => $layoutName]
+                ['layout' => 'proto-layout::' . $layoutName]
             )
         );
     }
