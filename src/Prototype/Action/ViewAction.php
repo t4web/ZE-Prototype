@@ -9,24 +9,54 @@ use Zend\Expressive\Template;
 
 class ViewAction
 {
+    /**
+     * @var Template\TemplateRendererInterface
+     */
     private $template;
 
-    public function __construct(Template\TemplateRendererInterface $template)
+    private $defaultTemplateName;
+    private $defaultLayoutName;
+
+    /**
+     * @param Template\TemplateRendererInterface $template
+     * @param string $defaultTemplateName
+     * @param string $defaultLayoutName
+     */
+    public function __construct(
+        Template\TemplateRendererInterface $template,
+        $defaultTemplateName = 'index',
+        $defaultLayoutName = 'prototype'
+    )
     {
         $this->template = $template;
+        $this->defaultTemplateName = $defaultTemplateName;
+        $this->defaultLayoutName = $defaultLayoutName;
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @param callable|null $next
+     * @return HtmlResponse
+     */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        if (!isset($request->getQueryParams()['t'])) {
-            return $next($request, $response->withStatus(400), 'Invalid parameter "t" - template name');
+        $templateName = $this->defaultTemplateName;
+        $layoutName = $this->defaultLayoutName;
+
+        if (isset($request->getQueryParams()['t'])) {
+            $templateName = $request->getQueryParams()['t'];
         }
 
-        $data = [];
         if (isset($request->getQueryParams()['l'])) {
-            $data['layout'] = 'proto-layout::' . $request->getQueryParams()['l'];
+            $layoutName = 'proto-layout::' . $request->getQueryParams()['l'];
         }
 
-        return new HtmlResponse($this->template->render('proto::' . $request->getQueryParams()['t'], $data));
+        return new HtmlResponse(
+            $this->template->render(
+                'proto::' . $templateName,
+                ['layout' => $layoutName]
+            )
+        );
     }
 }
